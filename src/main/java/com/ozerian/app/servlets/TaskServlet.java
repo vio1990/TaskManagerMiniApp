@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Servlet for treatment of user's input data.
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @WebServlet(name = "taskServlet", urlPatterns = {"/taskServlet"})
 public class TaskServlet extends HttpServlet {
 
-    private ArrayList<Task> tasks = new ArrayList();
+    private CopyOnWriteArrayList<Task> tasks = new CopyOnWriteArrayList<Task>();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -28,10 +28,14 @@ public class TaskServlet extends HttpServlet {
             task.setStatus(false);
             tasks.add(task);
         } else if ("update".equals(action)) {
-
+            for (Task task : tasks) {
+                if ("true".equals(request.getParameter("status"))) {
+                    tasks.remove(task);
+                }
+            }
         }
         request.setAttribute("tasks", tasks);
-        request.getRequestDispatcher("taskList").forward(request,response);
+        request.getRequestDispatcher("taskList").forward(request, response);
 
     }
 

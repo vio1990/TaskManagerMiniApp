@@ -26,7 +26,7 @@
                 <tr>
                     <td><c:out value="${task.name}"/></td>
                     <td><c:out value="${task.category}"/></td>
-                    <td><input name="status" type="checkbox" autofocus></td>
+                    <td><input name="status" type="checkbox" value="true" autofocus></td>
                 </tr>
             </c:forEach>
         </table>
