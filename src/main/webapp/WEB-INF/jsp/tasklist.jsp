@@ -22,11 +22,12 @@
                 <th>Category</th>
                 <th>Complete</th>
             </tr>
-            <c:forEach items="${tasks}" var="task">
+            <c:set var="count" value="0"/>
+            <c:forEach items="${tasks}" var="task" varStatus="taskLoop">
                 <tr>
                     <td><c:out value="${task.name}"/></td>
                     <td><c:out value="${task.category}"/></td>
-                    <td><input name="status" type="checkbox" value="true" autofocus></td>
+                    <td><input name="status" type="checkbox" value="${taskLoop.index}" autofocus></td>
                 </tr>
             </c:forEach>
         </table>

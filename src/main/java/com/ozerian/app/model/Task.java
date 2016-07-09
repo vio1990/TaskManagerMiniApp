@@ -9,8 +9,6 @@ public class Task {
 
     private String category;
 
-    private boolean status;
-
     /**
      * Empty default constructor.
      */
@@ -21,14 +19,13 @@ public class Task {
     /**
      * Constructor for the task model.
      *
-     * @param name String task name.
+     * @param name     String task name.
      * @param category String task category.
-     * @param status boolean status of the task "done" or "not done".
+     * @param status   boolean status of the task "done" or "not done".
      */
-    public Task(String name, String category, boolean status) {
+    public Task(String name, String category) {
         this.name = name;
         this.category = category;
-        this.status = status;
     }
 
     /**
@@ -67,21 +64,4 @@ public class Task {
         this.category = category;
     }
 
-    /**
-     * Get task status.
-     *
-     * @return boolean task status.
-     */
-    public boolean isStatus() {
-        return status;
-    }
-
-    /**
-     * Set task status.
-     *
-      * @param status boolean task status.
-     */
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 }
