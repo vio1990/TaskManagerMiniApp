@@ -19,12 +19,4 @@
         <url-pattern>/taskList</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>
-        <servlet-name>taskServlet</servlet-name>
-        <servlet-class>com.ozerian.app.servlets.TaskServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>taskServlet</servlet-name>
-        <url-pattern>/taskServlet</url-pattern>
-    </servlet-mapping>-->
 </web-app>
