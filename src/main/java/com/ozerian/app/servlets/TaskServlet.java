@@ -17,7 +17,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @WebServlet(name = "taskServlet", urlPatterns = {"/taskServlet"})
 public class TaskServlet extends HttpServlet {
 
-
     /**
      * Concurrent safe array for task list.
      */
